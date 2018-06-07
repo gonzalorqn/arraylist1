@@ -25,10 +25,12 @@ int main()
     ArrayList* lista;
     lista = al_newArrayList();
     Employee* e1;
-    e1 = (Employee*) malloc(sizeof(Employee));
+    //e1 = (Employee*) malloc(sizeof(Employee));
+    e1 = employee_new();
 
     Employee* e2;
-    e2 = (Employee*) malloc(sizeof(Employee));
+    //e2 = (Employee*) malloc(sizeof(Employee));
+    e2 = employee_new();
 
     e1->id = 666; //reemplazar por un setter
     strcpy(e1->name, "Juan");
@@ -47,7 +49,7 @@ int main()
 
     printf("Cantidad de elementos: %d\n",index);
 
-    auxInt = al_sort(lista, employee_compare(e1,e2),0);
+    auxInt = al_sort(lista,employee_compare,1);
     printf("%d\n",auxInt);
 
     for(i=0;i<index;i++)

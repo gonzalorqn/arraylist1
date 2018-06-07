@@ -6,14 +6,11 @@
 
 int employee_compare(void* pEmployeeA,void* pEmployeeB)
 {
-    int retorno = -1;
+    int retorno;
     Employee* e1 = (Employee*) pEmployeeA;
     Employee* e2 = (Employee*) pEmployeeB;
 
-    if(strcmp(e1->name, e2->name)>0)
-    {
-        retorno = 0;
-    }
+    retorno = strcmp(e1->name, e2->name);
 
     return retorno;
 }
@@ -29,7 +26,7 @@ Employee* employee_new(void)
 {
 
     Employee* returnAux = NULL;
-//    returnAux = (Employee*) malloc();
+    returnAux = (Employee*) malloc(sizeof(Employee));
 
     return returnAux;
 
