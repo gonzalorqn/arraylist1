@@ -18,6 +18,7 @@
 int main()
 {
     int index;
+    int auxInt;
     int i;
     Employee* eAux;
 
@@ -35,7 +36,7 @@ int main()
     e1->isEmpty = 1;
 
     e2->id = 777; //reemplazar por un setter
-    strcpy(e2->name, "Luis");
+    strcpy(e2->name, "Jose");
     strcpy(e2->lastName, "Perez");
     e2->isEmpty = 1;
 
@@ -45,6 +46,9 @@ int main()
     index = al_len(lista);
 
     printf("Cantidad de elementos: %d\n",index);
+
+    auxInt = al_sort(lista, employee_compare(e1,e2),0);
+    printf("%d\n",auxInt);
 
     for(i=0;i<index;i++)
     {
